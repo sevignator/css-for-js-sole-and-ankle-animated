@@ -71,6 +71,16 @@ const Link = styled.a`
 
 const Wrapper = styled.article`
   position: relative;
+  transition: transform 450ms ease-out;
+  will-change: transition;
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    ${Link}:hover &,
+    ${Link}:focus & {
+      transform: scale(1.025);
+      transition: transform 300ms ease-out;
+    }
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -83,6 +93,7 @@ const Image = styled.img`
   width: 100%;
   transform-origin: 50% 75%;
   transition: transform 600ms ease-out;
+  will-change: transition;
 
   @media (hover: hover) and (prefers-reduced-motion: no-preference) {
     ${Link}:hover &,
